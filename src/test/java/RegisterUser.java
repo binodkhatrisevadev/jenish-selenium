@@ -2,10 +2,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import main.HomePage;
 import main.SignUpPage;
 import main.SignuploginPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class RegisterUser {
     public static void main(String[] args){
@@ -15,27 +13,27 @@ public class RegisterUser {
         SignUpPage signuppage = new SignUpPage(driver);
         HomePage.signupButton(driver).click();
         SignuploginPage.name(driver).sendKeys("jenish");
-        SignuploginPage.email(driver).sendKeys("test@test772651.com");
+        SignuploginPage.email(driver).sendKeys("test@test7726751.com");
         SignuploginPage.button(driver).click();
-        signuppage.clicktitle("mrs");
+        signuppage.clicktitle("Mrs");
+        signuppage.password("ThisIsPassword");
+        signuppage.days("1");
+        signuppage.month("12");
+        signuppage.years("1988");
+        signuppage.fname("jenish");
+        signuppage.lname("mhr");
+        signuppage.company("subu.inc");
+        signuppage.address("kathmandu");
+        signuppage.state("Bagmati");
+        signuppage.city("kathmandu");
+        signuppage.zipcode("+977");
+        signuppage.mobile("1234567890");
+        signuppage.company("subu.inc");
+        signuppage.regbtn();
 
-//        SignUpPage.password(driver).sendKeys("123testing");
-//        SignUpPage.dob(driver).
-//        Select select = new Select(driver.findElement(By.id("days")));
-//        select.selectByValue("1");
-//        Select month = new Select(driver.findElement(By.id("months")));
-//        month.selectByValue("12");
-//        Select year = new Select(driver.findElement(By.id("years")));
-//        year.selectByValue("1988");
-//        driver.findElement(By.id("first_name")).sendKeys("Jenish");
-//        driver.findElement(By.id("last_name")).sendKeys("Maharjan");
-//        driver.findElement(By.id("company")).sendKeys("Subu");
-//        driver.findElement(By.id("address1")).sendKeys("Kirtipur");
-//        driver.findElement(By.id("state")).sendKeys("Kathmandu");
-//        driver.findElement(By.id("city")).sendKeys("Kirtipur");
-//        driver.findElement(By.id("zipcode")).sendKeys("+977");
-//        driver.findElement(By.id("mobile_number")).sendKeys("9083112222");
-//        driver.findElement(By.xpath("//button[@data-qa='create-account']")).click();
+
+
+
         driver.close();
     }
 }

@@ -1,6 +1,5 @@
 package main;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +13,19 @@ WebDriver driver;
 
 @FindBy(id = "id_gender1") WebElement title;
 @FindBy(xpath = "//input[@name='title']") List <WebElement> titles;
-
+@FindBy(id = "password") WebElement password;
+@FindBy(id = "days") WebElement days;
+@FindBy(id = "months") WebElement months;
+@FindBy(id = "years") WebElement year;
+@FindBy(id = "first_name") WebElement fname;
+@FindBy(id = "last_name") WebElement lname;
+@FindBy(id = "company") WebElement company;
+@FindBy(id = "address1") WebElement address;
+@FindBy(id = "state") WebElement state;
+@FindBy(id = "city") WebElement city;
+@FindBy(id = "zipcode") WebElement zipcode;
+@FindBy(id = "mobile_number") WebElement mobile;
+@FindBy(xpath = "//button[@data-qa='create-account']") WebElement submitbtn;
 
     public SignUpPage(WebDriver driver){
         PageFactory.initElements(driver,this);
@@ -25,61 +36,55 @@ WebDriver driver;
         for (WebElement title: titles) {
             String Value = title.getAttribute("value");
             if(Value.equalsIgnoreCase(titletoclick))
-                System.out.println(title.getText());
                 title.click();
             break;
 
         }
     }
-   public static WebElement element = null;
-    public static WebElement title (WebDriver driver){
-       element =  driver.findElement(By.id("id_gender1"));
-       return element;
+    public void password(String pass){
+
+        password.sendKeys(pass);
     }
-    public static WebElement password (WebDriver driver){
-        element = driver.findElement(By.id("password"));
-        return element;
+    public void days(String day){
+        Select select = new Select(days);
+        select.selectByValue(day);
     }
-//    public static WebElement dob (WebDriver driver){
-//        element =
-//        Select select = new Select(driver.findElement(By.id("days")));
-//        return (WebElement) select;
-//    }
-     public static WebElement fname (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+    public void month(String month){
+        Select select = new Select(months);
+        select.selectByValue(month);
     }
-     public static WebElement lname (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+    public void years(String years){
+        Select select = new Select(year);
+        select.selectByValue(years);
     }
-     public static WebElement company (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+    public void fname(String firstname){
+        fname.sendKeys(firstname);
     }
-     public static WebElement address (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+  public void lname(String lastname){
+        lname.sendKeys(lastname);
     }
-     public static WebElement state (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+  public void company(String companyname){
+        company.sendKeys(companyname);
     }
-     public static WebElement city (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+  public void address(String addressname){
+        address.sendKeys(addressname);
     }
-     public static WebElement zipcode (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+ public void state(String statename){
+        state.sendKeys(statename);
     }
-     public static WebElement mobilenum (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+ public void city(String cityname){
+        city.sendKeys(cityname);
     }
-     public static WebElement createbutton (WebDriver driver){
-        element = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        return element;
+public void zipcode(String zip){
+        zipcode.sendKeys(zip);
     }
+public void mobile(String mobilenum){
+        mobile.sendKeys(mobilenum);
+    }
+public void regbtn(){
+        submitbtn.click();
+    }
+
+
 
 }
