@@ -11,7 +11,8 @@ public class RegisterUser {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.automationexercise.com/");
         SignUpPage signuppage = new SignUpPage(driver);
-        HomePage.signupButton(driver).click();
+        HomePage homepage = new HomePage(driver);
+        homepage.signupButton();
         SignuploginPage.name(driver).sendKeys("jenish");
         SignuploginPage.email(driver).sendKeys("test@test7726751.com");
         SignuploginPage.button(driver).click();
