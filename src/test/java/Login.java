@@ -13,5 +13,6 @@ public class Login extends BasePage{
         loginpage.emailid("test@test7726751.com");
         loginpage.password("ThisIsPassword");
         loginpage.button();
+        homepage.signupButton();
     }
 }
