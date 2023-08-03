@@ -16,13 +16,13 @@ public class LoginPage {
         PageFactory.initElements(driver,this);
         this.driver = driver;
     }
-    public void emailid(String email){
+    public void EnterEmail(String email){
         emailadd.sendKeys(email);
     }
-    public void password(String pass){
+    public void EnterPassword(String pass){
         password.sendKeys(pass);
     }
-    public void button(){
+    public void ClickSubmit(){
         submit.click();
     }
 }

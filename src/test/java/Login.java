@@ -10,9 +10,17 @@ public class Login extends BasePage{
         HomePage homepage = new HomePage(driver);
         homepage.signupButton();
         LoginPage loginpage = new LoginPage(driver);
-        loginpage.emailid("test@test7726751.com");
-        loginpage.password("ThisIsPassword");
-        loginpage.button();
+        loginpage.EnterEmail("test@test7726751.com");
+        loginpage.EnterPassword("ThisIsPassword");
+        loginpage.ClickSubmit();
         homepage.signupButton();
+    }@Test
+       public void unsuccesslogin(){
+        HomePage homepage = new HomePage(driver);
+        homepage.signupButton();
+        LoginPage loginpage = new LoginPage(driver);
+        loginpage.EnterEmail("test@test77sdf26751.com");
+        loginpage.EnterPassword("ThisIsdfsPassword");
+        loginpage.ClickSubmit();
     }
 }
