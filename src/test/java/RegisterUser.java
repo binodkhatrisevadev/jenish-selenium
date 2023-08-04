@@ -1,20 +1,18 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
+import core.BasePage;
 import main.HomePage;
 import main.SignUpPage;
 import main.SignuploginPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class RegisterUser {
-    public static void main(String[] args){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.automationexercise.com/");
+public class RegisterUser extends BasePage {
+    @Test
+    public void NewRegistration(){
         SignUpPage signuppage = new SignUpPage(driver);
         HomePage homepage = new HomePage(driver);
         homepage.signupButton();
         SignuploginPage.name(driver).sendKeys("jenish");
-        SignuploginPage.email(driver).sendKeys("test@test7726751.com");
+        SignuploginPage.email(driver).sendKeys("test@test77267151.com");
         SignuploginPage.button(driver).click();
         signuppage.clicktitle("Mrs");
         signuppage.password("ThisIsPassword");
@@ -31,10 +29,17 @@ public class RegisterUser {
         signuppage.mobile("1234567890");
         signuppage.company("subu.inc");
         signuppage.regbtn();
-
-
-
-
-        driver.close();
+    }
+    @Test
+    public void ExistingUserRegistration (){
+        HomePage homepage = new HomePage(driver);
+        homepage.signupButton();
+        SignuploginPage.name(driver).sendKeys("jenish");
+        SignuploginPage.email(driver).sendKeys("test@test77267151.com");
+        SignuploginPage.button(driver).click();
+        SignuploginPage signuplogin = new SignuploginPage();
+        String validate = signuplogin.ValidationMessage();
+        String actualmessage = "Email Address already exist!";
+        Assert.assertEquals(validate,actualmessage);
     }
 }
