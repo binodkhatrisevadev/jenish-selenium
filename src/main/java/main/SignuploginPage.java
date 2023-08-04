@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class SignuploginPage {
     public static WebElement element = null;
-    @FindBy(xpath = "//input[@name='form_type']") WebElement validation;
+    @FindBy(xpath = "//p[text()=\"Email Address already exist!\"]") WebElement validation;
 
     public static WebElement name (WebDriver driver){
         element =  driver.findElement(By.xpath("//input[@placeholder='Name']"));
@@ -23,9 +23,10 @@ public class SignuploginPage {
         element = driver.findElement(By.xpath("//button[@data-qa='signup-button']"));
         return element;
     }
-    public String ValidationMessage(){
-      validation.getText();
-        System.out.println(validation);
-        return null;
+    public String ValidationMessage(WebDriver driver){
+        return driver.findElement(By.xpath("//p[text()=\"Email Address already exist!\"]")).getText();
     }
+//    public String ValidationMessage(WebDriver driver){
+//        return driver.findElement
+//    }
 }

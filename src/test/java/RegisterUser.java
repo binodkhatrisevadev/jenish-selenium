@@ -38,8 +38,7 @@ public class RegisterUser extends BasePage {
         SignuploginPage.email(driver).sendKeys("test@test77267151.com");
         SignuploginPage.button(driver).click();
         SignuploginPage signuplogin = new SignuploginPage();
-        String validate = signuplogin.ValidationMessage();
         String actualmessage = "Email Address already exist!";
-        Assert.assertEquals(validate,actualmessage);
+        Assert.assertEquals(signuplogin.ValidationMessage(driver),actualmessage);
     }
 }

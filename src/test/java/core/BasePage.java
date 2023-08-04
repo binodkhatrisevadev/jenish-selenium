@@ -14,7 +14,6 @@ public void driver(){
     driver = new ChromeDriver();
         driver.get("https://www.automationexercise.com/");
         PageFactory.initElements(driver,this);
-
     }
 
 
