@@ -11,9 +11,10 @@ public class RegisterUser extends BasePage {
         SignUpPage signuppage = new SignUpPage(driver);
         HomePage homepage = new HomePage(driver);
         homepage.signupButton();
-        SignuploginPage.name(driver).sendKeys("jenish");
-        SignuploginPage.email(driver).sendKeys("test@test77267151.com");
-        SignuploginPage.button(driver).click();
+        SignuploginPage signuploginpage = new SignuploginPage(driver);
+        signuploginpage.EnterName("jenish");
+        signuploginpage.EnterEmail("test@66aaa.com");
+        signuploginpage.ButtonClick();
         signuppage.clicktitle("Mrs");
         signuppage.password("ThisIsPassword");
         signuppage.days("1");
@@ -34,11 +35,11 @@ public class RegisterUser extends BasePage {
     public void ExistingUserRegistration (){
         HomePage homepage = new HomePage(driver);
         homepage.signupButton();
-        SignuploginPage.name(driver).sendKeys("jenish");
-        SignuploginPage.email(driver).sendKeys("test@test77267151.com");
-        SignuploginPage.button(driver).click();
-        SignuploginPage signuplogin = new SignuploginPage();
+        SignuploginPage singuplogin = new SignuploginPage(driver);
+        singuplogin.EnterName("jenish");
+        singuplogin.EnterEmail("test@test77267151.com");
+        singuplogin.ButtonClick();
         String actualmessage = "Email Address already exist!";
-        Assert.assertEquals(signuplogin.ValidationMessage(driver),actualmessage);
+        Assert.assertEquals(singuplogin.ValidationMessage(),actualmessage);
     }
 }
