@@ -14,6 +14,7 @@ public class HomePage {
     WebDriverWait wait;
     @FindBy(xpath = "//ul[@class='nav navbar-nav']/li[4]") WebElement signupbtn;
     @FindBy(xpath = "//ul[@class='nav navbar-nav']/li[8]") WebElement contactus;
+    @FindBy(xpath = "//a[text()=' Test Cases']") WebElement testcasepage;
 
 
     public HomePage(WebDriver driver) {
@@ -29,4 +30,5 @@ public class HomePage {
         signupbtn.click();
     }
     public void ContactUs(){contactus.click();}
+    public void Testcase(){testcasepage.click();}
 }
