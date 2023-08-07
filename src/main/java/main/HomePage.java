@@ -13,6 +13,7 @@ public class HomePage {
     WebDriver driver;
     WebDriverWait wait;
     @FindBy(xpath = "//ul[@class='nav navbar-nav']/li[4]") WebElement signupbtn;
+    @FindBy(xpath = "//ul[@class='nav navbar-nav']/li[8]") WebElement contactus;
 
 
     public HomePage(WebDriver driver) {
@@ -27,4 +28,5 @@ public class HomePage {
         wait.until(ExpectedConditions.elementToBeClickable(signupbtn));
         signupbtn.click();
     }
+    public void ContactUs(){contactus.click();}
 }

@@ -11,6 +11,7 @@ public class LoginPage {
     @FindBy(xpath = "//input[@data-qa='login-email']")WebElement emailadd;
     @FindBy(xpath = "//input[@data-qa='login-password']") WebElement password;
     @FindBy(xpath = "//button[@data-qa='login-button']") WebElement submit;
+    @FindBy(xpath = "//p[text()=\"Your email or password is incorrect!\"]") WebElement incorrect;
 
     public LoginPage(WebDriver driver){
         PageFactory.initElements(driver,this);
@@ -25,4 +26,5 @@ public class LoginPage {
     public void ClickSubmit(){
         submit.click();
     }
+    public String Validation(){return incorrect.getText();}
 }
