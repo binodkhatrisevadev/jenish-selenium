@@ -1,6 +1,7 @@
 import core.BasePage;
 import main.HomePage;
 import main.LoginPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Login extends BasePage{
@@ -22,5 +23,7 @@ public class Login extends BasePage{
         loginpage.EnterEmail("test@test77sdf26751.com");
         loginpage.EnterPassword("ThisIsdfsPassword");
         loginpage.ClickSubmit();
+        String validationmsg = "Your email or password is incorrect!";
+        Assert.assertEquals(loginpage.Validation(),validationmsg);
     }
 }
