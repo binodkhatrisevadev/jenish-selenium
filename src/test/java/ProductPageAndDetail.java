@@ -32,6 +32,5 @@ public class ProductPageAndDetail extends BasePage {
         Assert.assertTrue(Strings.isNotNullAndNotEmpty(productcondition));
         String productbrand = productdetail.productBrand();
         Assert.assertTrue(Strings.isNotNullAndNotEmpty(productbrand));
-
     }
 }
