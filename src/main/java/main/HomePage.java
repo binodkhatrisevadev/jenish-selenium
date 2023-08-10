@@ -15,6 +15,7 @@ public class HomePage {
     @FindBy(xpath = "//ul[@class='nav navbar-nav']/li[8]") WebElement contactus;
     @FindBy(xpath = "//a[text()=' Test Cases']") WebElement testcasepage;
     @FindBy(xpath = "//a[text()=' Products']") WebElement productlink;
+    @FindBy(css = "[href='\\/view_cart']") WebElement cartlink;
 
 
     public HomePage(WebDriver driver) {
@@ -27,4 +28,5 @@ public class HomePage {
     public void ContactUs(){contactus.click();}
     public void Testcase(){testcasepage.click();}
     public void Product(){productlink.click();}
+    public void cart(){cartlink.click();}
 }
